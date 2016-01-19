@@ -1,5 +1,18 @@
 var path = require('path');
 var webpack = require('webpack');
+var TapWebpackPlugin = require('tap-webpack-plugin');
+
+module.exports = {
+	target: 'node',
+	entry: ['./test'],
+	output: {
+		path: 'output',
+		filename: 'test.js'
+	},
+	plugins: [
+		new TapWebpackPlugin();
+		]
+};
 
 module.exports = {
     entry: './es6/main.js',
@@ -11,7 +24,7 @@ module.exports = {
         loaders: [
             {
                 loader: 'babel-loader',
-                test: path.join(__dirname, 'es6'),
+                test: /\.js$/,
                 query: {
                   presets: 'es2015',
                 },
