@@ -20,10 +20,16 @@ A small demo project that shows how to use webpack for client-side development i
 please do the following:
 
 transpile original es6 code to es5 using babel:
-$ babel es6/Point.js --out-file es6/compiledPoint.js
+`$ babel es6/Point.js --out-file es6/compiledPoint.js`
 
-ensure that the file tests/pointTest.js is importing the compiled es5 es6/compiledPoint.js
+ensure that the file tests/pointTest.js is importing the compiled es5 code es6/compiledPoint.js
 `point = require('../es6/compiledPoint')`
 
 run the unit test
-$ tape tests/pointTest.js
+`$ tape tests/pointTest.js`
+
+## Istanbul
+`$ istanbul cover tests/pointTest.js`
+
+* This command also provides the testing executing, same as tape.
+`$ istabul test tests/pointTest.js`
